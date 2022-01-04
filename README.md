@@ -1,24 +1,34 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+          index 
+            |
+            App (nav routes)
+            |
+Home -- About  --  Skills -- Portfolio -- Blog          --                    Contact Me
+                                           /\                                     /\
+                                  BlogForm    BlogList                 ContactForm  ContactList
+                                                \                                         \
+                                                Blog (update, delete)                       Contact (update, delete)
+                                                  (update) BlogForm                          (update) ContactForm 
+                                                    |                                             
+                                                  Posts
+                                                    /\
+                                            PostForm  PostList
+                                                      Post
+                                                      (update) PostForm
 
-Things you may want to cover:
+Models:
+Contact
+    F_Name
+    L_Name
+    Email
+    Phone
+    Body
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Blog
+    Topic
+    Has_many:Posts
+Post
+    Author
+    Body:Text
+    Date
+    Belongs_to:Blog
