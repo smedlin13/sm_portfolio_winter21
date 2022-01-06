@@ -5,11 +5,11 @@ import Skills from './components/shared/Skills';
 import Portfolio from './components/shared/Portfolio';
 import NoMatch from './components/shared/NoMatch';
 import Contacts from './components/contacts/Contacts';
-import Navbar from './components/shared/Navbar';
+import MainNav from './components/shared/MainNav';
 
 const App = () => (
   <>
-  <Navbar />
+  <MainNav />
   <Routes>
     <Route exact path='/' element={<Home /> } />
     <Route exact path='/home' element={<Home /> } />

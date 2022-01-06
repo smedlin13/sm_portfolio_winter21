@@ -1,6 +1,7 @@
 const Home = () => {
   return (
-    <h1>Stephanie Medlin Portfolio</h1>
+    <h1>Stephanie Medlin</h1>
+    
   )
 }
 
