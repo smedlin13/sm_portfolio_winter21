@@ -1,13 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const ContactForm = ({ addContact }) => {
-  const [contact, setContact ] = useState({ f_name: '', l_name: '', email: '', phone: '', body: ''})
+
+const ContactForm = ({ addContact, setEdit, id, updateContact, f_name, l_name, email, phone, body }) => {
+  const [contact, setContact ] = useState({ f_name: '', l_name: '', email: '', phone: 0, body: ''})
   
+  useEffect( () => {
+    if (id) {
+      setContact({ f_name, l_name, email, phone, body })
+    }
+  }, [])
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (id) {
+      updateContact(id, contact)
+      setEdit(false)
+    } else {
     addContact(contact)
-    setContact({ f_name: '', l_name: '', email: '', phone: '', body: ''})
+    }
+    setContact({ f_name: '', l_name: '', email: '', phone: 0, body: ''})
   }
 
   return (

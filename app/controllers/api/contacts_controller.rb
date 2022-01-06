@@ -1,6 +1,6 @@
-class Api::ControllersController < ApplicationController
-before_action :set_contact, only: [:show, :update, :destroy]
-
+class Api::ContactsController < ApplicationController
+  before_action :set_contact, only: [:show, :update, :destroy]
+    
 def index
   render json: Contact.all
 end
@@ -10,18 +10,20 @@ def show
 end
 
 def create
-  @contact = Contact.new
+  @contact = Contact.new(contact_params)
   if @contact.save
     render json: @contact
   else
-    render json: { errors: @contact.error }, status: :unprocessable_entity
+    render json: { errors: @contact.errors }, status: :unprocessable_entity
+  end
 end
 
 def update
   if @contact.update(contact_params)
     render json: @contact
   else
-    render json: { errors: @contact.error }, status: :unprocessable_entity
+    render json: { errors: @contact.errors }, status: :unprocessable_entity
+  end
 end
 
 def destroy
@@ -41,3 +43,4 @@ private
 
 
 end
+
