@@ -5,7 +5,7 @@ import ContactList from './ContactList';
 import { useNavigate } from 'react-router';
 
 const Contacts = ({}) => {
-  const [contacts, setContacts ] =useState([])
+  const [contacts, setContacts] = useState([])
   const navigate = useNavigate()
 
   useEffect( () => {
@@ -27,7 +27,7 @@ const Contacts = ({}) => {
   const updateContact = (id, contact) => {
     axios.put(`/api/contacts/${id}`, { contact })
       .then( res => {
-        const newUpdatedContacts = contacts.map( c => {
+        const newUpdatedContacts = contact.map( c => {
           if (c.id === id) {
             return res.data
           }
@@ -43,8 +43,9 @@ const Contacts = ({}) => {
   const deleteContact = (id) => {
     axios.delete(`/api/contacts/${id}`)
     .then(res => {
-      alert(res.data.message)
       setContacts(contacts.filter( c => c.id !== id))
+      alert(res.data.message)
+      navigate('/contacts')
     })
     .catch( err => console.log(err))
   }

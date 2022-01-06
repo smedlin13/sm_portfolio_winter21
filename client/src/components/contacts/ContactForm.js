@@ -13,12 +13,12 @@ const ContactForm = ({ addContact, setEdit, id, updateContact, f_name, l_name, e
 
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (id) {
       updateContact(id, contact)
       setEdit(false)
     } else {
-    addContact(contact)
+      addContact(contact)
     }
     setContact({ f_name: '', l_name: '', email: '', phone: 0, body: ''})
   }

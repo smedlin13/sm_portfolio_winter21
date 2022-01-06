@@ -7,10 +7,14 @@ import NoMatch from './components/shared/NoMatch';
 import Contacts from './components/contacts/Contacts';
 import MainNav from './components/shared/MainNav';
 import ContactShow from './components/contacts/ContactShow'
+import { Container } from 'react-bootstrap';
+
 
 const App = () => (
   <>
+
   <MainNav />
+  <Container >
   <Routes>
     <Route exact path='/' element={<Home /> } />
     <Route exact path='/home' element={<Home /> } />
@@ -23,6 +27,7 @@ const App = () => (
 
     <Route path='/*' element={<NoMatch />} />
     </Routes>
+    </Container>
   </>
 )
 

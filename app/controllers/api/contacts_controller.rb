@@ -28,7 +28,7 @@ end
 
 def destroy
   @contact.destroy
-  render json: { message: 'Contact deleted'}
+  render json: { message: "Contact deleted"}
 end
 
 private

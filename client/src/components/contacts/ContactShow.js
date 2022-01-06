@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ContactForm from './ContactForm';
 import { Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import Contacts from './Contacts';
+
 
 const ContactShow = ({deleteContact, updateContact, f_name, l_name, email, phone, body, id}) => {
-  const [editing, setEdit] = useState()
+  const [editing, setEdit] = useState(false)
   const [contact, setContact] = useState({f_name: '', l_name: '', email: '', phone: 0, body: '' })
   const params = useParams();
 
@@ -24,6 +25,7 @@ const ContactShow = ({deleteContact, updateContact, f_name, l_name, email, phone
         <ContactForm
           {...contact}
           updateContact={updateContact}
+          setEdit={setEdit}
         />
         <br />
         <Button variant="warning" onClick={() => setEdit(false)}>Cancel</Button>
