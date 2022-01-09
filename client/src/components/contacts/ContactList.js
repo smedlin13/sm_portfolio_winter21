@@ -12,7 +12,7 @@ const ContactList = ({ contacts }) => {
     <ListGroup> 
       { contacts.map ( c => 
         <>
-        <Link to={`/${c.id}`} key={c.id}>
+        <Link to={`/contacts/${c.id}`} key={c.id}>
           <ListGroup.Item>{c.f_name} {c.l_name}</ListGroup.Item>.
         </Link>
         </>

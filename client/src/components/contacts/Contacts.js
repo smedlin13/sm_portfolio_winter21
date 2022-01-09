@@ -27,7 +27,7 @@ const Contacts = ({}) => {
   const updateContact = (id, contact) => {
     axios.put(`/api/contacts/${id}`, { contact })
       .then( res => {
-        const newUpdatedContacts = contact.map( c => {
+        const newUpdatedContacts = contacts.map( c => {
           if (c.id === id) {
             return res.data
           }

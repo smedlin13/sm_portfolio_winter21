@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 
 
 const ContactForm = ({ addContact, setEdit, id, updateContact, f_name, l_name, email, phone, body }) => {
-  const [contact, setContact ] = useState({ f_name: '', l_name: '', email: '', phone: 0, body: ''})
+  const [contact, setContact ] = useState({ f_name: '', l_name: '', email: '', phone: '', body: ''})
   
   useEffect( () => {
     if (id) {
@@ -20,7 +20,7 @@ const ContactForm = ({ addContact, setEdit, id, updateContact, f_name, l_name, e
     } else {
       addContact(contact)
     }
-    setContact({ f_name: '', l_name: '', email: '', phone: 0, body: ''})
+    setContact({ f_name: '', l_name: '', email: '', phone: '', body: ''})
   }
 
   return (

@@ -7,8 +7,9 @@ import Contacts from './Contacts';
 
 
 const ContactShow = ({deleteContact, updateContact, f_name, l_name, email, phone, body, id}) => {
-  const [editing, setEdit] = useState(false)
+ 
   const [contact, setContact] = useState({f_name: '', l_name: '', email: '', phone: 0, body: '' })
+  const [editing, setEdit] = useState(false)
   const params = useParams();
 
 
@@ -27,7 +28,6 @@ const ContactShow = ({deleteContact, updateContact, f_name, l_name, email, phone
           updateContact={updateContact}
           setEdit={setEdit}
         />
-        <br />
         <Button variant="warning" onClick={() => setEdit(false)}>Cancel</Button>
         <br />
       </>
