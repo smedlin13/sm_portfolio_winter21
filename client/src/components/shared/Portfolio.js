@@ -1,10 +1,11 @@
 import { Image } from 'react-bootstrap';
 import { Container, Row, Col, Button, Card, CardGroup, Carousel, ListGroup} from 'react-bootstrap';
 import { PortfolioRow, PortfolioH1, ProjectRow, CarouselContainer } from '../../styles/sharedStyles.js';
-import Hustle from '../../images/Hustle.png'
-import SYSC from '../../images/SYSC.png'
-import TIM from '../../images/TIM.png'
-import Sweat from '../../images/Sweat.jpg'
+import Hustle from '../../images/Hustle.png';
+import SYSC from '../../images/SYSC.png';
+import TIM from '../../images/TIM.png';
+import Sweat from '../../images/Sweat.jpg';
+
 const Portfolio = () => {
   return (
     <>
@@ -197,7 +198,7 @@ const Portfolio = () => {
       </ListGroup>
     </Container>
     <div style={{textAlign: "center", marginTop: "40px"}}>
-        <Button variant="info" href="/resume" >Check Out My Resume</Button>
+        <Button variant="info" href="https://bikepackingwander.files.wordpress.com/2022/04/stephanie-medlin-resume-2022.pdf" >Check Out My Resume</Button>
     </div>
 
 
