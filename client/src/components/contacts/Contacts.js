@@ -1,66 +1,38 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
-import { useNavigate } from 'react-router';
+import { ContactConsumer } from '../../providers/ContactProvider';
+import { Button } from 'react-bootstrap';
 
-const Contacts = ({}) => {
-  const [contacts, setContacts] = useState([])
-  const navigate = useNavigate()
+const Contacts = ({ contacts, getAllContacts, addContact}) => {
+  const [adding, setAdding] = useState(false)
 
   useEffect( () => {
-    axios.get('/api/contacts')
-      .then( res => {
-        setContacts(res.data)
-      })
-      .catch( err => console.log(err))
+    getAllContacts()
   }, [])
   
-  const addContact = (contact) => {
-    axios.post('/api/contacts', { contact })
-    .then( res => {
-      setContacts([...contacts, res.data])
-    })
-    .catch( err => console.log(err))
-  }
-
-  const updateContact = (id, contact) => {
-    axios.put(`/api/contacts/${id}`, { contact })
-      .then( res => {
-        const newUpdatedContacts = contacts.map( c => {
-          if (c.id === id) {
-            return res.data
-          }
-          return c
-        })
-        setContacts(newUpdatedContacts)
-        navigate('/contacts')
-      })
-      .catch( err => console.log(err))
-  }
-
   
-  const deleteContact = (id) => {
-    axios.delete(`/api/contacts/${id}`)
-    .then(res => {
-      setContacts(contacts.filter( c => c.id !== id))
-      alert(res.data.message)
-      navigate('/contacts')
-    })
-    .catch( err => console.log(err))
-  }
 
   return (
     <>
       <h1>Contact Me</h1>
-      <ContactForm addContact={addContact}/>
-      <ContactList 
-      contacts={contacts}
-      deleteContact={deleteContact}
-      updateContact={updateContact}
-       />
+      { adding ?
+          <>
+            <ContactForm addContact={addContact} />
+            <Button variant="info" onClick={() => setAdding(false)}>Cancel</Button>
+          </>
+        :
+        <Button variant="info" onClick={() => setAdding(true)}>+</Button>
+      }
+      <ContactList contacts={contacts} />
     </>
   )
 }
 
-export default Contacts;
+const ConnectedContact = (props) => (
+  <ContactConsumer>
+    { value => <Contacts {...props} {...value} />}
+  </ContactConsumer>
+)
+
+export default ConnectedContact;

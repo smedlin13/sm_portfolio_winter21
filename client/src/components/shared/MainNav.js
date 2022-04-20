@@ -1,48 +1,35 @@
 import { Link } from 'react-router-dom';
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Navbar, Offcanvas, Container, Nav } from 'react-bootstrap';
+// import { Navbar } from '../../styles/sharedStyles.js';
 
 const MainNav = ({}) => {
   return (
     <>
-      <nav>
-        <ul>
-          <Navbar bg="light" variant="light">
-            <Container>
-              <Nav className="me-auto">
-              <Nav.Link>
-                <Link to="/home">
-                  Home
-                </Link>  
-              </Nav.Link>
-              <Nav.Link>
-                <Link to='/about'>About
-                </Link>
-              </Nav.Link>
-              <Nav.Link> 
-                <Link to='/skills'>
-                  Skills
-                </Link>    
-              </Nav.Link>
-              <Nav.Link> 
-                <Link to='/portfolio'>
-                  <li>Portfolio</li>
-                </Link>
-              </Nav.Link> 
-              <Nav.Link> 
-              <Link to='/contacts'>
-            <li>Contact</li>
-          </Link> 
-              </Nav.Link>
-              <Nav.Link> 
-              <Link to='/blogs'>
-            <li>Blog</li>
-          </Link> 
-              </Nav.Link>
-              </Nav>
-              </Container>
-              </Navbar>
-        </ul>
-      </nav>
+          <Navbar style={{backgroundColor: "white"}} expand={false}>
+            <Container style={{padding:"0px !important"}}>
+              <Navbar.Brand href="/"><img src="/logo.png" style={{height: "150px", width: "150px"}}/></Navbar.Brand>
+              <Navbar.Toggle aria-controls="offcanvasNavbar" />
+              <Navbar.Offcanvas
+                id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel"
+                placement="end"
+              >
+                <Offcanvas.Header closeButton>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <Nav className="justify-content-end flex-grow-1 pe-3">
+                    <Nav.Link href="/home">Home</Nav.Link>
+                    <Nav.Link href="/about">About</Nav.Link>
+                    {/* <Nav.Link href="/skills">Skills</Nav.Link> */}
+                    <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+                    <Nav.Link href="/contacts">Contact Me</Nav.Link>
+                    <Nav.Link href="/blogs">Blog</Nav.Link>
+                  </Nav>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </Container>
+          </Navbar>
+
     </>
   )
 }

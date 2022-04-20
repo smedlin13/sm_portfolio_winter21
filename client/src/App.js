@@ -4,15 +4,14 @@ import About from './components/shared/About';
 import Skills from './components/shared/Skills';
 import Portfolio from './components/shared/Portfolio';
 import NoMatch from './components/shared/NoMatch';
-import Contacts from './components/contacts/Contacts';
+import ContactForm from './components/contacts/ContactForm';
 import MainNav from './components/shared/MainNav';
-import ContactShow from './components/contacts/ContactShow'
 import { Container } from 'react-bootstrap';
-
+import Blogs from './components/shared/Blogs';
+import { HeaderTop } from './styles/sharedStyles';
 
 const App = () => (
   <>
-
   <MainNav />
   <Container >
   <Routes>
@@ -21,9 +20,8 @@ const App = () => (
     <Route exact path='/about' element={<About /> } />
     <Route exact path='/skills' element={<Skills /> } />
     <Route exact path='/portfolio' element={<Portfolio /> } />
-    <Route exact path='/contacts' element={<Contacts /> } />
-    <Route exact path='/:contactId' element={<ContactShow /> }>
-      </Route>
+    <Route exact path='/blogs' element={<Blogs />} />
+    <Route exact path='/contacts' element={<ContactForm /> } />
 
     <Route path='/*' element={<NoMatch />} />
     </Routes>

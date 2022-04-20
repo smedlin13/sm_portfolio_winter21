@@ -3,14 +3,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ContactForm from './ContactForm';
 import { Button } from 'react-bootstrap';
-import Contacts from './Contacts';
+import { ContactConsumer } from '../../providers/ContactProvider';
 
 
-const ContactShow = ({deleteContact, updateContact, f_name, l_name, email, phone, body, id}) => {
- 
+const ContactShow = ({deleteContact, updateContact}) => {
+  const params = useParams();
   const [contact, setContact] = useState({f_name: '', l_name: '', email: '', phone: 0, body: '' })
   const [editing, setEdit] = useState(false)
-  const params = useParams();
+  
 
 
   useEffect( () => {
@@ -19,14 +19,16 @@ const ContactShow = ({deleteContact, updateContact, f_name, l_name, email, phone
     .catch( err => console.log(err))
   }, [])
 
+  const { f_name, l_name, email, phone, body, id } = contact
+
   return (
     <>
-      { editing ? 
+      { editing ?
       <>
         <ContactForm
           {...contact}
           updateContact={updateContact}
-          setEdit={setEdit}
+          // setEdit={setEdit}
         />
         <Button variant="warning" onClick={() => setEdit(false)}>Cancel</Button>
         <br />
@@ -34,9 +36,10 @@ const ContactShow = ({deleteContact, updateContact, f_name, l_name, email, phone
       :
       <>
      
-    <h2>{contact.f_name} {contact.l_name}</h2>
-    <h3>Phone: {contact.phone} Email: {contact.email}</h3>
-    <p>Comments: {contact.body}</p>
+    <h2>{f_name} {l_name}</h2>
+    <h3>Phone: {phone} Email: {email}</h3>
+    <p>Comments: {body}</p>
+    <p>ID: {params.contactId}</p>
     
     <Button variant="success" onClick={() => setEdit(true)}>Edit</Button>
     <Button variant="danger" onClick={() => deleteContact(id)}>Delete</Button>
@@ -46,5 +49,11 @@ const ContactShow = ({deleteContact, updateContact, f_name, l_name, email, phone
   )
 }
 
+const ConnectedContactShow = (props) => (
+  <ContactConsumer>
+    { value => <ContactShow {...props} {...value} /> }
+  </ContactConsumer>
+)
 
-export default ContactShow;
+
+export default ConnectedContactShow;
