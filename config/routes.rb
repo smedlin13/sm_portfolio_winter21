@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :contacts
  end
 
+ get '*other', to: 'static#index'
+ 
 end
