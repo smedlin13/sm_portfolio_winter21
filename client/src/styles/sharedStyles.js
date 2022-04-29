@@ -9,12 +9,21 @@ export const HeaderTop = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
+`
+export const PageStyle = styled.body`
+  background-color: #2D0363;
+  margin: 0px;
+  padding: 0px;
 `
 export const ImageText = styled.div`
   text-align: center;
   position: flex;
   margin: 0 auto;
   color: white;  
+`
+export const MainRow = styled(Row)`
+  margin-left: 50px;
 `
 
 export const h1 = styled.h1`
@@ -25,11 +34,13 @@ export const h1 = styled.h1`
 export const Title = styled.h1`
     font-size: 72px;
     font-family: 'Sacramento', cursive;
-    text-center: center;
+    color: white;
   `
+
   
   export const SubTitle = styled.h2`
     font-size: 22px;
+    color: white;
     font-family: 'Playfair Display', serif;
     position: flex;
   `
@@ -61,7 +72,7 @@ export const Title = styled.h1`
   
   
   export const Button = styled.button`
-      background-color: #ffba29;
+      background-color: #C8EB07;
       color: black;
       display: block;
       margin: 0 auto;
@@ -81,14 +92,10 @@ export const Title = styled.h1`
   export const PortfolioRow = styled(Row)`
     justify-content: center;
     text-align: center;
-    border: solid;
-    width: 400px;
-    margin: 0 auto;
-    padding: 5px;
     `
 
   export const ProjectRow = styled(Row)`
-    margin: 20px 10px 55px 0px;
+    margin: 0px 10px 55px 0px;
     display: flex;
     align-items: center;
     justify-content: center;

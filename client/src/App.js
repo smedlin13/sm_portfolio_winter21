@@ -8,12 +8,13 @@ import ContactForm from './components/contacts/ContactForm';
 import MainNav from './components/shared/MainNav';
 import { Container } from 'react-bootstrap';
 import Blogs from './components/shared/Blogs';
-import { HeaderTop } from './styles/sharedStyles';
+import { HeaderTop, PageStyle } from './styles/sharedStyles';
 
 const App = () => (
   <>
   <MainNav />
-  <Container >
+  <PageStyle >
+  {/* <Container > */}
   <Routes>
     <Route exact path='/' element={<Home /> } />
     <Route exact path='/home' element={<Home /> } />
@@ -25,7 +26,9 @@ const App = () => (
 
     <Route path='/*' element={<NoMatch />} />
     </Routes>
-    </Container>
+    </PageStyle>
+    {/* </Container> */}
+    
   </>
 )
 

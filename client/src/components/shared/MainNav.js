@@ -5,7 +5,7 @@ import { Navbar, Offcanvas, Container, Nav } from 'react-bootstrap';
 const MainNav = ({}) => {
   return (
     <>
-          <Navbar style={{backgroundColor: "white"}} expand={false}>
+          <Navbar style={{backgroundColor: "#2D0363"}} expand={false}>
             <Container style={{padding:"0px !important"}}>
               <Navbar.Brand href="/"><img src="/logo.png" style={{height: "150px", width: "150px"}}/></Navbar.Brand>
               <Navbar.Toggle aria-controls="offcanvasNavbar" />
