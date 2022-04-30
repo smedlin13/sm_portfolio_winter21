@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
-import { Navbar, Row } from 'react-bootstrap';
+import { Navbar, Row, Tabs } from 'react-bootstrap';
 
+//applies to all
 export const HeaderTop = styled.div`
   background-image: url("/bike.jpeg");
   min-height: 600px;
@@ -56,7 +57,7 @@ export const Title = styled.h1`
     font-family: 'Montserrat', sans-serif;
   `
   
-  
+  //applies to home components
   export const ContainerBox = styled.div`
     display: grid;
     grid-template-columns: minmax(500px, 668px) minmax(500px, 668px);
@@ -72,7 +73,7 @@ export const Title = styled.h1`
   
   
   export const Button = styled.button`
-      background-color: #C8EB07;
+      background-color: #C9a2ff;
       color: black;
       display: block;
       margin: 0 auto;
@@ -89,6 +90,7 @@ export const Title = styled.h1`
       }
     `
 
+    //applies to Portfolio 
   export const PortfolioRow = styled(Row)`
     justify-content: center;
     text-align: center;
@@ -107,4 +109,8 @@ export const Title = styled.h1`
 
   export const PortfolioH1 = styled.h1`
       font-family: "Montserrat", san-serif;
+  `
+
+  export const PortfolioTabs = styled(Tabs)`
+      color: #04D4C3 !important;
   `
