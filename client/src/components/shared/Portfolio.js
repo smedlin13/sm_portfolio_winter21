@@ -1,45 +1,49 @@
 import { Image } from 'react-bootstrap';
 import { Container, Row, Col, Button, Card, CardGroup, Carousel, ListGroup, Tabs, Tab} from 'react-bootstrap';
-import { PortfolioRow, PortfolioH1, ProjectRow, CarouselContainer, PortfolioTabs } from '../../styles/sharedStyles.js';
+import { PortfolioRow, PortfolioH1, PortfolioH2, PortfolioH4,  ProjectRow, CarouselContainer, PortfolioTabs, ProjImage, PortfolioH3, PCard} from '../../styles/sharedStyles.js';
 import Hustle from '../../images/Hustle.png';
 import SYSC from '../../images/SYSC.png';
 import TIM from '../../images/TIM.png';
-import Sweat from '../../images/Sweat.jpg';
+import Sweat from '../../images/Sweat.png';
+import GameofLife from '../../images/GameofLife.png';
 
 const Portfolio = () => {
   return (
     <>
-    <PortfolioTabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-      <Tab eventKey="projects" title="Projects">
-        
+    <PortfolioTabs defaultActiveKey="projects" id="uncontrolled-tab-example" className="mb-3">
+      <Tab eventKey="projects" title="Projects">     
           <PortfolioRow style={{textAlign: "center", marginTop: "40px"}}> 
             <PortfolioH1>Projects</PortfolioH1>
           </PortfolioRow>
             <ProjectRow md={2} >
               <Col>
               <a href="https://game-of-life-winter21.herokuapp.com/" target="_blank" >
-                <Image src="/square1.jpg" alt='proj 1' thumbnail/>
+                <ProjImage src={GameofLife} alt='proj 1' thumbnail/>
               </a>
               </Col>
 
               <Col>
-              <h3>Project involved using React, Javascript, Ruby, CSS, HTML. I was on a team of 4 to 
+              <PortfolioH2>Game of Life App</PortfolioH2>
+              <PortfolioH3>Project involved using React, Javascript, Ruby, CSS, HTML. I was on a team of 4 to 
                 complete this site as part of our final project with DevPoint Labs.
-              </h3>
+              </PortfolioH3>
+              <PortfolioH4>VS Code - ReactJS - Ruby - Styled Components - React Materialize </PortfolioH4>
               </Col>
             </ProjectRow>
 
             <ProjectRow md={2} >
               <Col>
               <a href="/" target="_blank" >
-                <Image src={Sweat} alt='proj 1' thumbnail/>
+                <ProjImage src={Sweat} alt='proj 1' thumbnail/>
               </a>
               </Col>
 
               <Col>
-              <h3>I built this app for gym rats to have a place to save their workouts so they could return back to them at any time. 
+              <PortfolioH2>Sweat App</PortfolioH2>
+              <PortfolioH3>I built this app for gym rats to have a place to save their workouts so they could return back to them at any time. 
                 I built this app using React.JS, react-materialize to style it, and FilePond to upload images.
-              </h3>
+              </PortfolioH3>
+              <PortfolioH4>VS Code - ReactJS - Javascript - Styled Components - React Bootstrap </PortfolioH4>
               </Col>
           </ProjectRow>
       </Tab>
@@ -48,15 +52,18 @@ const Portfolio = () => {
         <PortfolioRow style={{textAlign: "center", marginTop: "40px"}}> 
           <PortfolioH1>Content Creation</PortfolioH1>
         </PortfolioRow>
-        <CardGroup style={{marginTop: "20px"}}>
-          <Row>
+        <CardGroup style={{marginTop: "20px"}} class="container">
+          <Row >
             <Col>
-              <Card>
-                <Card.Img variant="top" src={Hustle}  style={{height: "410px", width: "auto", display: "inline-flex", maxWidth: "100%"}}/>
+              <PCard>
+                <PCard.Img variant="top" src={Hustle}  style={{height: "410px", width: "auto", display: "inline-flex", maxWidth: "100%"}}/>
                 <Card.Body >
                   <Card.Title>WAS Hustle Event</Card.Title>
                   <Card.Text>
-                    An activity-based challenge that I helped create in 2020 during COVID-19. I designed the branding and created the marketing campaign while also building the website landing page via the platform Classy. 
+                    An activity-based challenge that I helped create in 
+                    2020 during COVID-19. I designed the branding and created 
+                    the marketing campaign while also building the website landing 
+                    page via the platform Classy. 
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -67,10 +74,10 @@ const Portfolio = () => {
                     Visit the event site.
                   </a></small>
                 </Card.Footer>
-              </Card>
+              </PCard>
             </Col>
             <Col>
-              <Card>
+              <PCard>
                 <Card.Img variant="top" src={SYSC}  style={{height: "410px", width: "auto", display: "flex", maxWidth: "100%"}}/>
                 <Card.Body >
                   <Card.Title>The Virtual Steve Young Ski Classic</Card.Title>
@@ -87,10 +94,10 @@ const Portfolio = () => {
                     Visit the Virtual Event site.
                   </a></small>
                 </Card.Footer>
-              </Card>
+              </PCard>
             </Col>
             <Col>
-              <Card>
+              <PCard>
                 <Card.Img variant="top" src={TIM}style={{height: "410px", width: "auto", display: "flex", maxWidth: "100%"}}/>
                 <Card.Body>
                   <Card.Title>New Website and Tagline</Card.Title>
@@ -107,7 +114,7 @@ const Portfolio = () => {
                     Visit the new WAS site.
                   </a></small>
                 </Card.Footer>
-              </Card>
+              </PCard>
             </Col>
           </Row>
         </CardGroup>

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { Navbar, Row, Tabs } from 'react-bootstrap';
+import { Navbar, Row, Tabs, Image, Card} from 'react-bootstrap';
 
 //applies to all
 export const HeaderTop = styled.div`
@@ -103,14 +103,56 @@ export const Title = styled.h1`
     justify-content: center;
   `
 
+  export const ProjImage = styled(Image)`
+    background-color: invert(72%) sepia(68%) saturate(2512%) hue-rotate(208deg) brightness(105%) contrast(101%);
+    width: 550px;
+    max-width: 550px;
+    margin-left: 100px;
+    margin-top: 50px;
+  `
   export const CarouselContainer = styled.div`
-      margin-top: 20px;
+    margin-top: 20px;
   `
 
   export const PortfolioH1 = styled.h1`
-      font-family: "Montserrat", san-serif;
+    font-family: "Montserrat", san-serif;
+    color: white;
+  `
+  export const PortfolioH2 = styled.h2`
+    font-family: "Sacramento", san-serif;
+    color: white;
+    font-size: 52px;
+    margin-bottom: 30px;
+    margin-right: 100px;
+    text-align: right;
+      
+  `
+  export const PortfolioH3 = styled.h3`
+      background-color: #C9a2ff; 
+      color: black;
+      padding: 30px;
+      margin-right: 100px;
+      box-shadow: 5px 10px 10px #000;
+      border-radius: 5px;
+      font-size: 18px;
+      
+  `
+
+  export const PortfolioH4 = styled.h4`
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-right: 100px;
+    text-align: right;
   `
 
   export const PortfolioTabs = styled(Tabs)`
       color: #04D4C3 !important;
+  `
+
+  export const PCard = styled(Card)`
+      max-width: 100%;
+      position: relative;
+      width: 400px;
   `
