@@ -33,7 +33,7 @@ const Portfolio = () => {
 
             <ProjectRow md={2} >
               <Col>
-              <a href="/" target="_blank" >
+              <a href="https://sweat-stax.herokuapp.com/" target="_blank" >
                 <ProjImage src={Sweat} alt='proj 1' thumbnail/>
               </a>
               </Col>
