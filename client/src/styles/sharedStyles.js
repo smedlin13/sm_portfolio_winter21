@@ -156,3 +156,14 @@ export const Title = styled.h1`
       position: relative;
       width: 400px;
   `
+
+  export const ProjectIcon = styled.img`
+      color: #00000;
+      height: 50px;
+      font-size: 36px;
+      float: right;
+      margin-right: 100px;
+      &:hover {
+        background-color: #e0a130;
+      }
+  `

@@ -13,6 +13,7 @@ const MainNav = ({}) => {
                 id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel"
                 placement="end"
+                style={{color: "#fff"}}
               >
                 <Offcanvas.Header closeButton>
                 </Offcanvas.Header>
@@ -23,7 +24,7 @@ const MainNav = ({}) => {
                     {/* <Nav.Link href="/skills">Skills</Nav.Link> */}
                     <Nav.Link href="/portfolio">Portfolio</Nav.Link>
                     <Nav.Link href="/contacts">Contact Me</Nav.Link>
-                    <Nav.Link href="/blogs">Blog</Nav.Link>
+                    {/* <Nav.Link href="/blogs">Blog</Nav.Link> */}
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>

@@ -6,6 +6,7 @@ import SYSC from '../../images/SYSC.png';
 import TIM from '../../images/TIM.png';
 import Sweat from '../../images/Sweat.png';
 import GameofLife from '../../images/GameofLife.png';
+import github from '../../images/github.png';
 
 const Portfolio = () => {
   return (
@@ -28,6 +29,9 @@ const Portfolio = () => {
                 complete this site as part of our final project with DevPoint Labs.
               </PortfolioH3>
               <PortfolioH4>VS Code - ReactJS - Ruby - Styled Components - React Materialize </PortfolioH4>
+              <a href="https://github.com/henry-doan/game-of-life-winter21" target="_blank">
+                <i class="fa fa-github" style={{color: "white", height: "50px", fontSize: "36px", float: "right", marginRight: "100px"}}/>
+              </a>
               </Col>
             </ProjectRow>
 
@@ -44,13 +48,16 @@ const Portfolio = () => {
                 I built this app using React.JS, react-materialize to style it, and FilePond to upload images.
               </PortfolioH3>
               <PortfolioH4>VS Code - ReactJS - Javascript - Styled Components - React Bootstrap </PortfolioH4>
+              <a href="https://github.com/smedlin13/SweatStax" target="_blank">
+                <i class="fa fa-github" style={{color: "white", height: "50px", fontSize: "36px", float: "right", marginRight: "100px"}}/>
+              </a>
               </Col>
           </ProjectRow>
       </Tab>
       
       <Tab eventKey="content" title="Content">
         <PortfolioRow style={{textAlign: "center", marginTop: "40px"}}> 
-          <PortfolioH1>Content Creation</PortfolioH1>
+          <PortfolioH1>Website Design</PortfolioH1>
         </PortfolioRow>
         <CardGroup style={{marginTop: "20px"}} class="container">
           <Row >
@@ -156,7 +163,7 @@ const Portfolio = () => {
         </Carousel>
       </Tab>
 
-      <Tab eventKey="publications" title="Publications">
+      {/* <Tab eventKey="publications" title="Publications">
         <PortfolioRow style={{textAlign: "center", marginTop: "40px"}}>
           <PortfolioH1>Publications</PortfolioH1>
         </PortfolioRow>
@@ -164,7 +171,13 @@ const Portfolio = () => {
           <ListGroup.Item style={{textAlign: "center"}}><a href="https://blog.gregorypacks.com/2022/03/17/expanding-possibilities-in-the-mountains-with-wasatch-adaptive-sports/" target="_blank">
             Gregory Packs: Expanding Possibiities in the Mountains with Wasatch Adaptive Sports</a></ListGroup.Item>
         </ListGroup>
-      </Tab>
+      </Tab> */}
+      {/* <Tab eventKey="photos" title="Photography">
+        <PortfolioRow>
+          <PortfolioH1>Photography</PortfolioH1>
+        </PortfolioRow>
+
+      </Tab> */}
     
     </PortfolioTabs>
 
@@ -177,8 +190,8 @@ const Portfolio = () => {
       
       
     
-    <div style={{textAlign: "center", marginTop: "40px"}}>
-        <Button variant="info" href="https://bikepackingwander.files.wordpress.com/2022/04/stephanie-medlin-resume-2022.pdf" >Check Out My Resume</Button>
+    <div style={{textAlign: "center", margin: "40px"}}>
+        <Button variant="info" href="https://bikepackingwander.files.wordpress.com/2022/05/stephanie-medlin-resume_.pdf" >Check Out My Resume</Button>
     </div>
 
 
