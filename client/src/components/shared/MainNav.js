@@ -5,15 +5,15 @@ import logo from '../..'
 const MainNav = ({}) => {
   return (
     <>
-          <Navbar style={{backgroundColor: "#2D0363"}} expand={false}>
+          <Navbar style={{backgroundColor: "#6F8FAF"}} expand={false}>
             <Container style={{padding:"0px !important"}}>
-              <Navbar.Brand href="/"><img src="https://i0.wp.com/bikepackingwander.files.wordpress.com/2022/05/logo.png?ssl=1" style={{height: "150px", width: "150px"}}/></Navbar.Brand>
+              <Navbar.Brand href="/"><img src="https://bikepackingwander.files.wordpress.com/2022/05/hustle-post-ideas.png?resize=668%2C668" style={{height: "200px", width: "200px"}}/></Navbar.Brand>
               <Navbar.Toggle aria-controls="offcanvasNavbar" />
               <Navbar.Offcanvas
                 id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel"
                 placement="end"
-                style={{color: "#fff"}}
+                style={{color: "#fff", margin: "0px"}}
               >
                 <Offcanvas.Header closeButton>
                 </Offcanvas.Header>

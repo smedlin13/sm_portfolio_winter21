@@ -1,5 +1,26 @@
 import styled, { keyframes } from 'styled-components';
-import { Navbar, Row, Tabs, Image, Card} from 'react-bootstrap';
+import { Navbar, Row, Col, Tabs, Image, Card, Container} from 'react-bootstrap';
+
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`
+};
 
 //applies to all
 export const HeaderTop = styled.div`
@@ -10,12 +31,36 @@ export const HeaderTop = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: black;
+  background-color: #ADD8E6;
 `
 export const PageStyle = styled.body`
-  background-color: #2D0363;
+  background-color: #6F8FAF;
   margin: 0px;
   padding: 0px;
+  @media ${device.laptop} { 
+    max-width: 100%;
+
+  }
+
+  @media ${device.desktop} {
+    max-width: 100%;
+ 
+  }
+
+  @media ${device.mobileL} {
+    flex-basis: 33%;
+    flex-wrap: nowrap;
+  }
+
+  @media ${device.mobileM} {
+    flex-basis: 33%;
+    flex-wrap: nowrap;
+  }
+
+  @media ${device.mobileS} {
+    flex-basis: 33%;
+    flex-wrap: nowrap;
+  }
 `
 export const ImageText = styled.div`
   text-align: center;
@@ -23,8 +68,22 @@ export const ImageText = styled.div`
   margin: 0 auto;
   color: white;  
 `
+
 export const MainRow = styled(Row)`
-  margin-left: 50px;
+  margin-left: 150px;
+  flex-basis: 100%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-basis: 33%;
+    margin-left: 0;
+  }
+`
+export const MainCol = styled(Col)`
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 30px;
+
 `
 
 export const h1 = styled.h1`
@@ -73,10 +132,10 @@ export const Title = styled.h1`
   
   
   export const Button = styled.button`
-      background-color: #C9a2ff;
+      background-color: #F7DD72;
       color: black;
       display: block;
-      margin: 0 auto;
+      margin: 5px auto;
       font-weight: 20px;
       font-family: 'Work Sans', sans-serif;
       padding: 9px 25px;
@@ -86,7 +145,7 @@ export const Title = styled.h1`
       text-decoration: none;
       transition: all 0.3s ease 0s;
       &:hover {
-        background-color: #e0a130;
+        background-color: #B8994B;
       }
     `
 
@@ -94,6 +153,14 @@ export const Title = styled.h1`
   export const PortfolioRow = styled(Row)`
     justify-content: center;
     text-align: center;
+    display: flex;
+    @media (max-width: 1520px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      flex-basis: 100%;
+      justify-content: center;
+      align-items: center;
+    }
     `
 
   export const ProjectRow = styled(Row)`
@@ -101,6 +168,23 @@ export const Title = styled.h1`
     display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
+    @media (max-width: 1520px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      flex-basis: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+
+
+      .h1, .h2, .h3, .h4 {
+        margin-right: 0px;
+        padding-right: 0px;
+
+      }
+    }
+
   `
 
   export const ProjImage = styled(Image)`
@@ -109,6 +193,15 @@ export const Title = styled.h1`
     max-width: 550px;
     margin-left: 100px;
     margin-top: 50px;
+    display: flex;
+    @media (max-width: 1520px) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-basis: 100%;
+      max-width: 100%;
+      align-items: left;
+      justify-content: left;
+    }
   `
   export const CarouselContainer = styled.div`
     margin-top: 20px;
@@ -128,7 +221,7 @@ export const Title = styled.h1`
       
   `
   export const PortfolioH3 = styled.h3`
-      background-color: #C9a2ff; 
+      background-color: #F7DD72; 
       color: black;
       padding: 30px;
       margin-right: 100px;
@@ -157,13 +250,13 @@ export const Title = styled.h1`
       width: 400px;
   `
 
-  export const ProjectIcon = styled.img`
-      color: #00000;
-      height: 50px;
-      font-size: 36px;
-      float: right;
-      margin-right: 100px;
-      &:hover {
-        background-color: #e0a130;
-      }
-  `
+  // export const ProjectIcon = styled.img`
+  //     color: #00000;
+  //     height: 50px;
+  //     font-size: 36px;
+  //     float: right;
+  //     margin-right: 100px;
+  //     &:hover {
+  //       background-color: #e0a130;
+  //     }
+  // `

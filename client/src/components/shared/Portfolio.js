@@ -1,6 +1,6 @@
 import { Image } from 'react-bootstrap';
-import { Container, Row, Col, Button, Card, CardGroup, Carousel, ListGroup, Tabs, Tab} from 'react-bootstrap';
-import { PortfolioRow, PortfolioH1, PortfolioH2, PortfolioH4,  ProjectRow, CarouselContainer, PortfolioTabs, ProjImage, PortfolioH3, PCard} from '../../styles/sharedStyles.js';
+import { Container, Row, Col, Card, CardGroup, Carousel, ListGroup, Tabs, Tab} from 'react-bootstrap';
+import { PortfolioRow, PortfolioH1, PortfolioH2, PortfolioH4,  ProjectRow, CarouselContainer, PortfolioTabs, ProjImage, PortfolioH3, PCard, Button} from '../../styles/sharedStyles.js';
 import Hustle from '../../images/Hustle.png';
 import SYSC from '../../images/SYSC.png';
 import TIM from '../../images/TIM.png';
@@ -41,7 +41,6 @@ const Portfolio = () => {
                 <ProjImage src={Sweat} alt='proj 1' thumbnail/>
               </a>
               </Col>
-
               <Col>
               <PortfolioH2>Sweat App</PortfolioH2>
               <PortfolioH3>I built this app for gym rats to have a place to save their workouts so they could return back to them at any time. 
@@ -180,21 +179,17 @@ const Portfolio = () => {
       </Tab> */}
     
     </PortfolioTabs>
-
-    
-      
-
-      
-
-      
-      
-      
-    
     <div style={{textAlign: "center", margin: "40px"}}>
-        <Button variant="info" href="https://bikepackingwander.files.wordpress.com/2022/05/stephanie-medlin-resume_.pdf" >Check Out My Resume</Button>
+        <Button><a href="https://bikepackingwander.files.wordpress.com/2022/05/stephanie-medlin-resume_.pdf" target="_blank" style={{textDecoration: "none", color: "#000"}}>Check Out My Resume</a></Button>
     </div>
+    
+      
 
+      
 
+      
+      
+    
     </>
   )
 }

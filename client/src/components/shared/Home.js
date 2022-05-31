@@ -1,13 +1,13 @@
 import { Image } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Title, ParaHome, ContainerBox, Experience, Button, ImageText, HeaderTop, SubTitle, MainRow } from '../../styles/sharedStyles';
+import { Title, ParaHome, ContainerBox, Experience, Button, ImageText, HeaderTop, SubTitle, MainRow, MainCol, MainContainer } from '../../styles/sharedStyles';
 // import bike from '../../images/bike.jpeg';
 const Home = () => {
   return (
     <>
     <Container fluid>
       <MainRow>
-        <Col style={{display: "flex", alignItems: "center", marginRight: "20px", marginBottom: "30px"}}>
+        <MainCol>
           <ul style={{listStyle: "none"}}>
             <li style={{marginBottom: "30px"}}>
               <Title>Hi, I'm Stephanie. </Title>
@@ -35,14 +35,14 @@ const Home = () => {
           </Button>
           </li>
           </ul>
-        </Col> 
-        <Col>
+        </MainCol> 
+        <MainCol>
           <Image 
-            src="steph.jpeg" 
+            src="Steph.JPG" 
             alt="steph_selfie" 
             roundedCircle 
             fluid style={{width: "500px", height: "500px", objectFit: "cover"}}/>
-        </Col>
+        </MainCol>
       </MainRow>
     </Container>
     </>
