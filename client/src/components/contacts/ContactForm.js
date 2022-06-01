@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import {Button} from '../../styles/sharedStyles'
 import ReactDOM from "react-dom";
 import { useFormspark } from "@formspark/use-formspark";
 
@@ -40,7 +41,7 @@ const ContactForm = ({ addContact, setEdit, id, updateContact, f_name, l_name, e
 
   return (
     <>
-      <Form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit} style={{margin: "0 50px", fontFamily: "Montserrat, serif"}}>
         <Form.Group className="mb-3">
           <Form.Label for="f_name">First Name:</Form.Label>
             <Form.Control
@@ -100,7 +101,7 @@ const ContactForm = ({ addContact, setEdit, id, updateContact, f_name, l_name, e
         ></Form.Control>
         </Form.Group>
 
-        <Button variant="primary" type="submit">Submit</Button>
+        <Button type="submit">Submit</Button>
       </Form>
     </>
   )

@@ -101,7 +101,7 @@ export const Title = styled.h1`
   export const SubTitle = styled.h2`
     font-size: 22px;
     color: white;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', serif;
     position: flex;
   `
   
